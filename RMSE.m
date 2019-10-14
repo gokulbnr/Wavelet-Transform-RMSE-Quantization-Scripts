@@ -1,5 +1,7 @@
-function[error] = RMSE(im1,im2)
-%im1 = imread(im1);
-%im2 = imread(im2);
-
-error = sqrt(mean(mean((double(im1)-double(im2)).^2,2),1));
+function rmse = RMSE(im1,im2)
+    im=double(im1)-double(im2);
+    im=im(:);
+    im=im.*im;
+    im=mean(im);
+    rmse=sqrt(im);
+end
